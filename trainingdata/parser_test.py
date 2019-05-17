@@ -23,7 +23,7 @@ for p in data:
 		if data[p]['instrument_family'] == 3 and prob < 0.041: #guitar
 			shortlist.append([p,4]) 
 			numSamples[3] += 1
-		if data[p]['instrument_family'] == 6: #organ
+		if data[p]['instrument_family'] == 6: #organ #the current badQuals list stops any organ samples from being selected
 			shortlist.append([p,5]) 
 			numSamples[4] += 1
 		if data[p]['instrument_family'] == 7 and prob < 0.06: #reed
