@@ -1,0 +1,5 @@
+This folder contains my data parsing script for the NSynth Dataset (https://magenta.tensorflow.org/datasets/nsynth)
+
+My identifiation network can classify instruments into 6 different categories, which are pulled from the NSynth dataset. To simplify the goal, only acoustic versions of bass, brass, flute, guitar, reed, and strings were pulled. The scripts here parse through the .json file included with the NSynth dataset, which must be in the same directory, and append all of the associated filenames into a shortlist .json file. This file can be interpreted by Matlab to allow batched feature extraction.
+
+The parser utilizes RNG to limit the amount of samples each class has appended to the list. This is controlled with a set of probabilities you can view in the script. The 'train' parser is currently optimized to gather an average of 1000 samples of each class if possible, while the test grabs up to 200 samples of each. This is currently hard-coded, but a version that has the average as an input variable is possible improvement.
